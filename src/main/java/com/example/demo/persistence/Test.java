@@ -24,4 +24,9 @@ public class Test extends GenericPersistable {
     public void setLabel(final String label) {
         this.label = label;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Test[id=%d, name='%s']", this.getId(), this.getLabel());
+    }
 }
