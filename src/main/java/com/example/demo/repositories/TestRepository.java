@@ -1,6 +1,6 @@
 package com.example.demo.repositories;
 
-import com.example.demo.persistence.Test;
+import com.example.demo.persistence.test.Test;
 import org.springframework.transaction.annotation.Transactional;
 
 /**

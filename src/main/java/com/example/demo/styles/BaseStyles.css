@@ -1,0 +1,144 @@
+/**
+ * @file
+ * This file contains the basic style for any page.
+ */
+
+html {
+    /*
+     * Always show page scroll-bar to prevent side-movement when hovering over items that are extending their height and
+     * suddenly the content doesn't fit above the fold.
+     */
+    overflow-y: scroll;
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 50px !important;
+}
+
+.mainHeader.with-navbar-default .navbar-default {
+    /*
+     * The mainHeader navbar should not have rounded borders when it is not fixed.
+     *
+     * @see: Navbar.Position.DEFAULT
+     * @see: bootstrap::navbar.less
+     */
+    border-radius: 0;
+}
+
+.mainHeader.with-navbar-fixed-top {
+    /*
+     * The mainHeader doesn't have any height when the navbar is fixed, and other elements are behind it.
+     *
+     * HACK: The default bootstrap navbar is 50px height and has a bottom margin of 20px for the default font size.
+     *
+     * @see: Navbar.Position.TOP
+     * @see: bootstrap::navbar.less
+     */
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+.mainHeader .navbar {
+    background: #223a49;
+    box-shadow: none;
+    padding-bottom: 12px;
+    padding-top: 12px;
+}
+
+.mainHeader .navbar.navbar-inverse {
+    border-color: #223a49;
+}
+
+.mainHeader .navbar.navbar-inverse .navbar-nav > .active > a {
+    background-color: transparent;
+}
+
+.mainHeader .navbar .container {
+    width: 100%;
+}
+
+
+.mainContainer {
+    /*
+     * The main page content should have some height.
+     */
+    min-height: 20em;
+}
+@media (min-width: 1025px){
+  .mainContainer{
+    margin-top: 5%;
+  }
+}
+@media (max-width: 1024px){
+  .mainContainer{
+    margin-top: 10%;
+  }
+}
+@media (max-width: 768px){
+  .mainContainer{
+    margin-top: 15%;
+  }
+}
+@media (max-width:412px){
+  .mainContainer{
+    margin-top: 25%;
+  }
+}
+
+.mainFooter {
+    /*
+     * Add some spacing around the footer.
+     */
+    margin-top: 2em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    background-color: #095a14;
+}
+
+.navbar-header .navbar-brand {
+    /*height: auto;*/
+    padding: 0;
+}
+
+.navbar-header .navbar-brand img {
+    display: inline-block;
+    width: 60px;
+    margin-left: 20px;
+    margin-top: -8px;
+}
+
+.navbar-header .navbar-brand span {
+    display: inline-block;
+    padding-left: 10px;
+    color: #fff;
+}
+
+@media (max-width: 768px){
+  .navbar-header .navbar-brand img{
+    margin-top: -10px;
+  }
+  .navbar-header .navbar-brand span{
+    margin-top: -5px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 412px){
+  .navbar-header .navbar-brand img{
+    margin-top: -75px;
+  }
+}
+
+h1.pageTitle {
+    border-bottom: 1px solid #eeeeee;
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}

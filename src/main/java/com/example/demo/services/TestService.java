@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.persistence.Test;
+import com.example.demo.persistence.test.Test;
 import com.example.demo.repositories.TestRepository;
 import com.google.code.ssm.api.InvalidateAssignCache;
 import com.google.code.ssm.api.ReadThroughAssignCache;

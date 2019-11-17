@@ -1,5 +1,6 @@
-package com.example.demo.persistence;
+package com.example.demo.persistence.test;
 
+import com.example.demo.persistence.GenericPersistable;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
