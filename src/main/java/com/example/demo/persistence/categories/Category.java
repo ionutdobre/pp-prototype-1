@@ -38,6 +38,10 @@ public class Category extends GenericPersistable implements Serializable, Labela
         return label;
     }
 
+    public void setLabel(final String label) {
+        this.label = label;
+    }
+
     public String getDescription() {
         return description;
     }

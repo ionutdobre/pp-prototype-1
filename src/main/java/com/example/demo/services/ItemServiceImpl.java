@@ -1,31 +1,35 @@
 package com.example.demo.services;
 
-import com.example.demo.persistence.categories.Department;
+import com.example.demo.persistence.Item;
 import com.example.demo.repositories.BaseJpaRepository;
 import com.example.demo.repositories.TextSearchableRepository;
-import com.example.demo.repositories.categories.DepartmentRepository;
+import com.example.demo.repositories.categories.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * @author idobre
+ * @since 17/11/2019
+ */
 @Service
 @Transactional(readOnly = true)
-public class DepartmentServiceImpl extends BaseJpaServiceImpl<Department> implements DepartmentService {
+public class ItemServiceImpl extends BaseJpaServiceImpl<Item> implements ItemService {
     @Autowired
-    private DepartmentRepository repository;
-    
+    private ItemRepository repository;
+
     @Override
-    protected BaseJpaRepository<Department, Long> repository() {
+    protected BaseJpaRepository<Item, Long> repository() {
         return repository;
     }
 
     @Override
-    public TextSearchableRepository<Department, Long> textRepository() {
+    public TextSearchableRepository<Item, Long> textRepository() {
         return repository;
     }
 
     @Override
-    public Department newInstance() {
-        return new Department();
+    public Item newInstance() {
+        return new Item();
     }
 }

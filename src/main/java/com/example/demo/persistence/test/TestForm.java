@@ -2,20 +2,15 @@ package com.example.demo.persistence.test;
 
 import com.example.demo.constants.DBConstants;
 import com.example.demo.persistence.GenericPersistable;
-import com.example.demo.persistence.categories.Department;
+import com.example.demo.persistence.categories.Brand;
 import com.example.demo.persistence.categories.Role;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OrderColumn;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -37,7 +32,7 @@ public class TestForm extends GenericPersistable {
 
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @ManyToOne
-    private Department entitySelect;
+    private Brand entitySelect;
 
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
     @ManyToMany
@@ -74,11 +69,11 @@ public class TestForm extends GenericPersistable {
         this.checkbox = checkbox;
     }
 
-    public Department getEntitySelect() {
+    public Brand getEntitySelect() {
         return entitySelect;
     }
 
-    public void setEntitySelect(final Department entitySelect) {
+    public void setEntitySelect(final Brand entitySelect) {
         this.entitySelect = entitySelect;
     }
 

@@ -12,11 +12,11 @@ import com.example.demo.components.Select2MultiChoiceBootstrapFormComponent;
 import com.example.demo.components.TextAreaFieldBootstrapFormComponent;
 import com.example.demo.components.TextFieldBootstrapFormComponent;
 import com.example.demo.pages.BasePage;
-import com.example.demo.persistence.categories.Department;
+import com.example.demo.persistence.categories.Brand;
 import com.example.demo.persistence.categories.Role;
 import com.example.demo.persistence.test.TestForm;
 import com.example.demo.providers.GenericPersistableJpaTextChoiceProvider;
-import com.example.demo.services.DepartmentService;
+import com.example.demo.services.BrandService;
 import com.example.demo.services.RoleService;
 import com.example.demo.services.TestFormService;
 import de.agilecoders.wicket.core.markup.html.bootstrap.form.BootstrapForm;
@@ -38,7 +38,7 @@ public class EditTestFormPage extends BasePage<TestForm> {
     private RoleService roleService;
 
     @SpringBean
-    private DepartmentService departmentService;
+    private BrandService brandService;
 
     private EditForm editForm;
 
@@ -88,8 +88,8 @@ public class EditTestFormPage extends BasePage<TestForm> {
         editForm.add(textArea);
         textArea.required();
 
-        final Select2ChoiceBootstrapFormComponent<Department> entitySelect = new Select2ChoiceBootstrapFormComponent<>(
-                "entitySelect", new GenericPersistableJpaTextChoiceProvider<>(departmentService));
+        final Select2ChoiceBootstrapFormComponent<Brand> entitySelect = new Select2ChoiceBootstrapFormComponent<>(
+                "entitySelect", new GenericPersistableJpaTextChoiceProvider<>(brandService));
         entitySelect.required();
         editForm.add(entitySelect);
 
