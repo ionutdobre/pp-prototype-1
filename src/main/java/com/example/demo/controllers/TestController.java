@@ -3,7 +3,6 @@ package com.example.demo.controllers;
 import com.example.demo.pages.HomePage;
 import com.example.demo.persistence.test.Test;
 import com.example.demo.services.TestService;
-import com.google.common.util.concurrent.AtomicDouble;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -67,7 +68,7 @@ public class TestController {
                     Math.pow(
                             Math.sqrt(
                                     Math.pow(i, number) + Math.pow(2, number + 1)),
-                    2);
+                            2);
 
             test += time /
                     Math.pow(
@@ -76,6 +77,10 @@ public class TestController {
                             2);
 
             test += Math.sqrt(time / Math.pow(i, 10));
+
+            final double rounded = (new BigDecimal(Double.toString(test))
+                    .setScale(2, BigDecimal.ROUND_HALF_UP))
+                    .doubleValue() * i;
         });
 
         final long end = System.nanoTime();
@@ -111,6 +116,10 @@ public class TestController {
                             2);
 
             test += Math.sqrt(time / Math.pow(i, 10));
+
+            final double rounded = (new BigDecimal(Double.toString(test))
+                    .setScale(2, BigDecimal.ROUND_HALF_UP))
+                    .doubleValue() * i;
         });
 
         final long end = System.nanoTime();
