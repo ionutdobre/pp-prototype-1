@@ -4,6 +4,7 @@ on:
     pull_request:
         types: [assigned, opened, synchronize, reopened]
         branches:
+            - master
             - develop
     push:
         branches:
