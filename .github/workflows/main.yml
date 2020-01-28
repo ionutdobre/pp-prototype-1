@@ -6,8 +6,6 @@ on:
         branches:
             - develop
     push:
-        paths:
-            - 'backend/**'
         branches:
             - master
             - develop      
