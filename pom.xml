@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <wicket.version>8.6.0</wicket.version>
+        <wicket.version>8.9.0</wicket.version>
         <wicket-bootstrap.version>2.0.11</wicket-bootstrap.version>
         <mockito-core.version>3.1.0</mockito-core.version>
     </properties>
